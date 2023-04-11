@@ -1,7 +1,7 @@
 import type { Contract } from '@ethersproject/contracts'
 import { TransactionReceipt } from '@ethersproject/abstract-provider'
 import { Pair } from '@uniswap/v2-sdk'
-import { FeeAmount } from '@uniswap/v3-sdk'
+import { FeeAmount } from '@yumyumswap/swap-sdk'
 import { parseEvents, V2_EVENTS, V3_EVENTS } from './shared/parseEvents'
 import { expect } from './shared/expect'
 import { encodePath } from './shared/swapRouter02Helpers'
@@ -424,7 +424,7 @@ describe('Uniswap V2 and V3 Tests:', () => {
     })
   })
 
-  describe('Trade on UniswapV3', () => {
+  describe('Trade on YumyumSwap', () => {
     const amountIn: BigNumber = expandTo18DecimalsBN(500)
     const amountInMax: BigNumber = expandTo18DecimalsBN(2000)
     const amountOut: BigNumber = expandTo18DecimalsBN(1)

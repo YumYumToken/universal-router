@@ -3,9 +3,9 @@ pragma solidity ^0.8.17;
 
 import {V3Path} from './V3Path.sol';
 import {BytesLib} from './BytesLib.sol';
-import {SafeCast} from '@uniswap/v3-core/contracts/libraries/SafeCast.sol';
-import {IUniswapV3Pool} from '@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol';
-import {IUniswapV3SwapCallback} from '@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol';
+import {SafeCast} from '@yumyumswap/contract-core/contracts/libraries/SafeCast.sol';
+import {IYumyumSwapPool} from '@yumyumswap/contract-core/contracts/interfaces/IYumyumSwapPool.sol';
+import {IYumyumSwapSwapCallback} from '@yumyumswap/contract-core/contracts/interfaces/callback/IYumyumSwapSwapCallback.sol';
 import {Constants} from '../../../libraries/Constants.sol';
 import {RouterImmutables} from '../../../base/RouterImmutables.sol';
 import {Permit2Payments} from '../../Permit2Payments.sol';
@@ -13,7 +13,7 @@ import {Constants} from '../../../libraries/Constants.sol';
 import {ERC20} from 'solmate/src/tokens/ERC20.sol';
 
 /// @title Router for Uniswap v3 Trades
-abstract contract V3SwapRouter is RouterImmutables, Permit2Payments, IUniswapV3SwapCallback {
+abstract contract V3SwapRouter is RouterImmutables, Permit2Payments, IYumyumSwapSwapCallback {
     using V3Path for bytes;
     using BytesLib for bytes;
     using SafeCast for uint256;
@@ -37,7 +37,7 @@ abstract contract V3SwapRouter is RouterImmutables, Permit2Payments, IUniswapV3S
     /// @dev The maximum value that can be returned from #getSqrtRatioAtTick. Equivalent to getSqrtRatioAtTick(MAX_TICK)
     uint160 internal constant MAX_SQRT_RATIO = 1461446703485210103287273052203988822378723970342;
 
-    function uniswapV3SwapCallback(int256 amount0Delta, int256 amount1Delta, bytes calldata data) external {
+    function yumyumswapSwapCallback(int256 amount0Delta, int256 amount1Delta, bytes calldata data) external {
         if (amount0Delta <= 0 && amount1Delta <= 0) revert V3InvalidSwap(); // swaps entirely within 0-liquidity regions are not supported
         (, address payer) = abi.decode(data, (bytes, address));
         bytes calldata path = data.toBytes(0);
@@ -148,7 +148,7 @@ abstract contract V3SwapRouter is RouterImmutables, Permit2Payments, IUniswapV3S
 
         zeroForOne = isExactIn ? tokenIn < tokenOut : tokenOut < tokenIn;
 
-        (amount0Delta, amount1Delta) = IUniswapV3Pool(computePoolAddress(tokenIn, tokenOut, fee)).swap(
+        (amount0Delta, amount1Delta) = IYumyumSwapPool(computePoolAddress(tokenIn, tokenOut, fee)).swap(
             recipient,
             zeroForOne,
             amount,

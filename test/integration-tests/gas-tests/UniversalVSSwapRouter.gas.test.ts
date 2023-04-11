@@ -1,9 +1,9 @@
-import { encodeSqrtRatioX96, FeeAmount, Pool, TickMath } from '@uniswap/v3-sdk'
+import { encodeSqrtRatioX96, FeeAmount, Pool, TickMath } from '@yumyumswap/swap-sdk'
 import { Pair, Route as V2RouteSDK } from '@uniswap/v2-sdk'
-import { Route as V3RouteSDK } from '@uniswap/v3-sdk'
+import { Route as V3RouteSDK } from '@yumyumswap/swap-sdk'
 import { encodePath, expandTo18Decimals } from '../shared/swapRouter02Helpers'
 import { BigNumber } from 'ethers'
-import { SwapRouter } from '@uniswap/router-sdk'
+import { SwapRouter } from '@yumyumswap/router-sdk'
 import {
   executeSwapRouter02Swap,
   resetFork,
@@ -23,7 +23,7 @@ import { UniversalRouter, Permit2, ERC20__factory, ERC20 } from '../../../typech
 import { getPermitSignature, PermitSingle } from '../shared/protocolHelpers/permit2'
 import { CurrencyAmount, Percent, Token, TradeType } from '@uniswap/sdk-core'
 import snapshotGasCost from '@uniswap/snapshot-gas-cost'
-import { IRoute, Trade } from '@uniswap/router-sdk'
+import { IRoute, Trade } from '@yumyumswap/router-sdk'
 const { ethers } = hre
 
 describe('Uniswap UX Tests gas:', () => {

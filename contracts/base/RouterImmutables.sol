@@ -85,10 +85,10 @@ contract RouterImmutables {
     /// @dev The UniswapV2Pair initcodehash
     bytes32 internal immutable UNISWAP_V2_PAIR_INIT_CODE_HASH;
 
-    /// @dev The address of UniswapV3Factory
+    /// @dev The address of YumyumSwapFactory
     address internal immutable UNISWAP_V3_FACTORY;
 
-    /// @dev The UniswapV3Pool initcodehash
+    /// @dev The YumyumSwapPool initcodehash
     bytes32 internal immutable UNISWAP_V3_POOL_INIT_CODE_HASH;
 
     enum Spenders {

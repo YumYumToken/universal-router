@@ -1,8 +1,8 @@
 import type { Contract } from '@ethersproject/contracts'
 import { CurrencyAmount, Ether, Percent, Token, TradeType } from '@uniswap/sdk-core'
 import { Route as V2RouteSDK, Pair } from '@uniswap/v2-sdk'
-import { Route as V3RouteSDK, FeeAmount } from '@uniswap/v3-sdk'
-import { SwapRouter, Trade } from '@uniswap/router-sdk'
+import { Route as V3RouteSDK, FeeAmount } from '@yumyumswap/swap-sdk'
+import { SwapRouter, Trade } from '@yumyumswap/router-sdk'
 import snapshotGasCost from '@uniswap/snapshot-gas-cost'
 import deployUniversalRouter, { deployPermit2 } from '../shared/deployUniversalRouter'
 import { getPermitBatchSignature } from '../shared/protocolHelpers/permit2'
@@ -406,7 +406,7 @@ describe('Uniswap Gas Tests', () => {
     })
   })
 
-  describe('Trade on UniswapV3', () => {
+  describe('Trade on YumyumSwap', () => {
     describe('with Router02.', () => {
       const amountIn = CurrencyAmount.fromRawAmount(DAI, expandTo18Decimals(5))
       const amountOut = CurrencyAmount.fromRawAmount(WETH, expandTo18Decimals(1))

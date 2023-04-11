@@ -12,7 +12,7 @@ import snapshotGasCost from '@uniswap/snapshot-gas-cost'
 const { ethers } = hre
 import WETH_ABI from '../../../artifacts/contracts/interfaces/external/IWETH9.sol/IWETH9.json'
 import { BigNumber } from 'ethers'
-import { ADDRESS_THIS } from '@uniswap/router-sdk'
+import { ADDRESS_THIS } from '@yumyumswap/router-sdk'
 
 describe('Payments Gas Tests', () => {
   let alice: SignerWithAddress

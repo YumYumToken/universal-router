@@ -17,7 +17,7 @@ import { TransactionResponse } from '@ethersproject/abstract-provider'
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers'
 import { BigNumber, constants } from 'ethers'
 import hre from 'hardhat'
-import { MethodParameters } from '@uniswap/v3-sdk'
+import { MethodParameters } from '@yumyumswap/swap-sdk'
 import { Pair } from '@uniswap/v2-sdk'
 const { ethers } = hre
 
