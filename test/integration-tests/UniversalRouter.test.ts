@@ -1,6 +1,6 @@
 import { UniversalRouter, Permit2, ERC20, IWETH9, MockLooksRareRewardsDistributor, ERC721 } from '../../typechain'
 import { BigNumber, BigNumberish } from 'ethers'
-import { Pair } from '@uniswap/v2-sdk'
+import { Pair } from '@yumyumswap/v2-sdk'
 import { expect } from './shared/expect'
 import { abi as ROUTER_ABI } from '../../artifacts/contracts/UniversalRouter.sol/UniversalRouter.json'
 import { abi as TOKEN_ABI } from '../../artifacts/solmate/src/tokens/ERC20.sol/ERC20.json'

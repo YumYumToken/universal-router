@@ -1,6 +1,6 @@
 import type { Contract } from '@ethersproject/contracts'
-import { CurrencyAmount, Ether, Percent, Token, TradeType } from '@uniswap/sdk-core'
-import { Route as V2RouteSDK, Pair } from '@uniswap/v2-sdk'
+import { CurrencyAmount, Ether, Percent, Token, TradeType } from '@yumyumswap/sdk-core'
+import { Route as V2RouteSDK, Pair } from '@yumyumswap/v2-sdk'
 import { Route as V3RouteSDK, FeeAmount } from '@yumyumswap/swap-sdk'
 import { SwapRouter, Trade } from '@yumyumswap/router-sdk'
 import snapshotGasCost from '@uniswap/snapshot-gas-cost'

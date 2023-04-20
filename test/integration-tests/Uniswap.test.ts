@@ -1,6 +1,6 @@
 import type { Contract } from '@ethersproject/contracts'
 import { TransactionReceipt } from '@ethersproject/abstract-provider'
-import { Pair } from '@uniswap/v2-sdk'
+import { Pair } from '@yumyumswap/v2-sdk'
 import { FeeAmount } from '@yumyumswap/swap-sdk'
 import { parseEvents, V2_EVENTS, V3_EVENTS } from './shared/parseEvents'
 import { expect } from './shared/expect'
