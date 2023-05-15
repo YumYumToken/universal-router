@@ -5,7 +5,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.4.2",
+  "version": "1.4.3",
   "keywords": [
     "uniswap",
     "router",
@@ -43,11 +43,11 @@
     "@typechain/ethers-v5": "^4.0.0",
     "@types/chai": "^4.2.6",
     "@types/mocha": "^5.2.7",
-    "@yumyumswap/router-sdk": "^1.4.2",
+    "@yumyumswap/router-sdk": "^1.4.3",
     "@yumyumswap/sdk-core": "^3.0.1",
     "@uniswap/snapshot-gas-cost": "^1.0.0",
     "@yumyumswap/v2-sdk": "^3.0.1",
-    "@yumyumswap/swap-sdk": "^3.9.2",
+    "@yumyumswap/swap-sdk": "^3.9.3",
     "bignumber.js": "^9.0.0",
     "chai": "^4.3.4",
     "ethers": "^5.7.2",
